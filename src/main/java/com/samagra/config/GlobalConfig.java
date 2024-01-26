@@ -1,8 +1,15 @@
 package com.samagra.config;
 
-import com.samagra.converters.StringToBrowserTypeConverter;
+import com.samagra.config.converters.StringToBrowserRemotePlatformConverter;
+import com.samagra.config.converters.StringToBrowserRunModeConverter;
+import com.samagra.config.converters.StringToBrowserTypeConverter;
+import com.samagra.config.converters.StringToURLConverter;
+import com.samagra.enums.BrowserRemotePlatform;
+import com.samagra.enums.BrowserRunMode;
 import com.samagra.enums.BrowserType;
 import org.aeonbits.owner.Config;
+
+import java.net.URL;
 
 @Config.Sources(value = {
         "system:env",
@@ -14,10 +21,22 @@ import org.aeonbits.owner.Config;
 @Config.LoadPolicy(Config.LoadType.MERGE)
 public interface GlobalConfig extends Config {
 
-    @Key("browser")
+    @Key("web.browser")
     @DefaultValue("CHROME")
     @ConverterClass(StringToBrowserTypeConverter.class)
     BrowserType browser();
+
+    @Key("web.runmode")
+    @ConverterClass(StringToBrowserRunModeConverter.class)
+    BrowserRunMode browserRunMode();
+
+    @Key("web.browser.remote.platform")
+    @ConverterClass(StringToBrowserRemotePlatformConverter.class)
+    BrowserRemotePlatform browserRemotePlatform();
+
+    @Key("selenium.grid.url")
+    @ConverterClass(StringToURLConverter.class)
+    URL seleniumGridURL();
 
     @Key("wait.least")
     int leastwait();
