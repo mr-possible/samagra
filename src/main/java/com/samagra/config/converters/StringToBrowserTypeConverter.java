@@ -1,4 +1,4 @@
-package com.samagra.converters;
+package com.samagra.config.converters;
 
 import com.samagra.enums.BrowserType;
 import org.aeonbits.owner.Converter;

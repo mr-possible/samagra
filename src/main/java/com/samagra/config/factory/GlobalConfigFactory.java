@@ -1,5 +1,6 @@
-package com.samagra.config;
+package com.samagra.config.factory;
 
+import com.samagra.config.GlobalConfig;
 import org.aeonbits.owner.ConfigCache;
 
 public final class GlobalConfigFactory {
