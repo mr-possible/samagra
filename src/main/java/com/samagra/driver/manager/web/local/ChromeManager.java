@@ -1,4 +1,4 @@
-package com.samagra.driver.manager;
+package com.samagra.driver.manager.web.local;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;

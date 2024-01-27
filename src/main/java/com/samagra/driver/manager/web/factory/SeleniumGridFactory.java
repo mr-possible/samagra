@@ -1,7 +1,7 @@
-package com.samagra.driver.factory;
+package com.samagra.driver.manager.web.factory;
 
-import com.samagra.driver.manager.SeleniumGridChromeManager;
-import com.samagra.driver.manager.SeleniumGridFirefoxManager;
+import com.samagra.driver.manager.web.remote.SeleniumGridChromeManager;
+import com.samagra.driver.manager.web.remote.SeleniumGridFirefoxManager;
 import com.samagra.enums.BrowserType;
 import org.openqa.selenium.WebDriver;
 

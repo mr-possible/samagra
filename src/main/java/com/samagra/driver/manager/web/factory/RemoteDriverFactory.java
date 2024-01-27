@@ -1,4 +1,4 @@
-package com.samagra.driver.factory;
+package com.samagra.driver.manager.web.factory;
 
 import com.samagra.enums.BrowserRemotePlatform;
 import com.samagra.enums.BrowserType;
