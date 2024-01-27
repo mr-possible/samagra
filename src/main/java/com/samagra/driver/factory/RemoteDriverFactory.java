@@ -4,20 +4,22 @@ import com.samagra.enums.BrowserRemotePlatform;
 import com.samagra.enums.BrowserType;
 import org.openqa.selenium.WebDriver;
 
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.function.Function;
+
 public final class RemoteDriverFactory {
     private RemoteDriverFactory() {
     }
 
-    public static WebDriver getDriver(BrowserRemotePlatform browserRemotePlatform, BrowserType browserType) {
-        if (browserRemotePlatform == BrowserRemotePlatform.SELENIUM_GRID) {
-            SeleniumGridFactory.getDriver(browserType);
-        }
+    private static final Map<BrowserRemotePlatform, Function<BrowserType, WebDriver>> map = new EnumMap<>(BrowserRemotePlatform.class);
 
-        if (browserRemotePlatform == BrowserRemotePlatform.BROWSERSTACK) {
-            //TODO - kept for later.
-        }
-
-        return null;
+    static {
+        map.put(BrowserRemotePlatform.SELENIUM_GRID, SeleniumGridFactory::getDriver);
+        //TODO: add browserstack later
     }
 
+    public static WebDriver getDriver(BrowserRemotePlatform browserRemotePlatform, BrowserType browserType) {
+        return map.get(browserRemotePlatform).apply(browserType);
+    }
 }

@@ -1,22 +1,27 @@
 package com.samagra.driver.factory;
 
-import com.samagra.config.factory.GlobalConfigFactory;
 import com.samagra.driver.manager.ChromeManager;
 import com.samagra.driver.manager.FirefoxManager;
 import com.samagra.enums.BrowserType;
 import org.openqa.selenium.WebDriver;
 
+import java.util.EnumMap;
+import java.util.Map;
+import java.util.function.Supplier;
+
 public final class LocalDriverFactory {
-    private static WebDriver driver;
 
     private LocalDriverFactory() {
     }
 
-    public static WebDriver getDriver(BrowserType browserType) {
-        return isChrome(browserType) ? ChromeManager.getChromeDriver() : FirefoxManager.getFirefoxDriver();
+    private static final Map<BrowserType, Supplier<WebDriver>> map = new EnumMap<>(BrowserType.class);
+
+    static {
+        map.put(BrowserType.CHROME, ChromeManager::getChromeDriver);
+        map.put(BrowserType.FIREFOX, FirefoxManager::getFirefoxDriver);
     }
 
-    private static boolean isChrome(BrowserType browserType) {
-        return GlobalConfigFactory.getConfig().browser() == BrowserType.CHROME;
+    public static WebDriver getDriver(BrowserType browserType) {
+        return map.get(browserType).get();
     }
 }
