@@ -38,6 +38,11 @@ public interface GlobalConfig extends Config {
     @ConverterClass(StringToURLConverter.class)
     URL seleniumGridURL();
 
+    @Key("appium.server.url")
+    @ConverterClass(StringToURLConverter.class)
+    @DefaultValue("http://127.0.0.1:4723/wd/hub")
+    URL localAppiumServerURL();
+
     @Key("wait.least")
     int leastwait();
 
