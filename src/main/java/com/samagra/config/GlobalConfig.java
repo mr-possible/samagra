@@ -11,14 +11,14 @@ import org.aeonbits.owner.Config;
 
 import java.net.URL;
 
-@Config.Sources(value = {
-        "system:env",
-        "system:properties",
-        "file:src//main//resources//config.properties",
-        "file:src//main//resources//${profile}.properties"
-}
-)
 @Config.LoadPolicy(Config.LoadType.MERGE)
+@Config.Sources({
+        "system:properties",
+        "system:env",
+        "file:${user.dir}/src/test/resources/config.properties",
+        "file:${user.dir}/src/test/resources/staging-config.properties",
+        "file:${user.dir}/src/test/resources/dev-config.properties"
+})
 public interface GlobalConfig extends Config {
 
     @Key("web.browser")
