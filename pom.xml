@@ -19,7 +19,7 @@
         <testdatasupplier.version>1.9.7</testdatasupplier.version>
         <assertjcore.version>3.21.0</assertjcore.version>
         <testng.version>7.4.0</testng.version>
-        <webdrivermanager.version>5.0.3</webdrivermanager.version>
+        <webdrivermanager.version>5.6.3</webdrivermanager.version>
         <selenium.version>4.17.0</selenium.version>
         <lombok.version>1.18.30</lombok.version>
         <javafaker.version>1.0.2</javafaker.version>
