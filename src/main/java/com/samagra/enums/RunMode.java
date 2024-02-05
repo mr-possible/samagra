@@ -1,6 +1,6 @@
 package com.samagra.enums;
 
-public enum BrowserRunMode {
+public enum RunMode {
     LOCAL,
     REMOTE
 }

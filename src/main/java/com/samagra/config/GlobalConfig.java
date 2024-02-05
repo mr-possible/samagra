@@ -1,12 +1,7 @@
 package com.samagra.config;
 
-import com.samagra.config.converters.StringToBrowserRemotePlatformConverter;
-import com.samagra.config.converters.StringToBrowserRunModeConverter;
-import com.samagra.config.converters.StringToBrowserTypeConverter;
-import com.samagra.config.converters.StringToURLConverter;
-import com.samagra.enums.BrowserRemotePlatform;
-import com.samagra.enums.BrowserRunMode;
-import com.samagra.enums.BrowserType;
+import com.samagra.config.converters.*;
+import com.samagra.enums.*;
 import org.aeonbits.owner.Config;
 
 import java.net.URL;
@@ -21,14 +16,14 @@ import java.net.URL;
 })
 public interface GlobalConfig extends Config {
 
+    @Key("runmode")
+    @ConverterClass(StringToRunModeConverter.class)
+    RunMode runMode();
+
     @Key("web.browser")
     @DefaultValue("CHROME")
     @ConverterClass(StringToBrowserTypeConverter.class)
     BrowserType browser();
-
-    @Key("web.runmode")
-    @ConverterClass(StringToBrowserRunModeConverter.class)
-    BrowserRunMode browserRunMode();
 
     @Key("web.browser.remote.platform")
     @ConverterClass(StringToBrowserRemotePlatformConverter.class)
@@ -37,6 +32,14 @@ public interface GlobalConfig extends Config {
     @Key("selenium.grid.url")
     @ConverterClass(StringToURLConverter.class)
     URL seleniumGridURL();
+
+    @Key("mobile.os")
+    @ConverterClass(StringToMobileOSConverter.class)
+    MobileOSType mobileOS();
+
+    @Key("mobile.remote.platform")
+    @ConverterClass(StringToMobileRemotePlatformConverter.class)
+    MobileRemotePlatform mobileRemotePlatform();
 
     @Key("appium.server.url")
     @ConverterClass(StringToURLConverter.class)
