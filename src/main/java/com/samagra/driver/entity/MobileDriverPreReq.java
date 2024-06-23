@@ -9,7 +9,6 @@ import lombok.Getter;
 @Builder
 @Getter
 public class MobileDriverPreReq {
-    private RunMode runMode;
     private MobileOSType mobileOSType;
     private MobileRemotePlatform mobileRemotePlatform;
 }

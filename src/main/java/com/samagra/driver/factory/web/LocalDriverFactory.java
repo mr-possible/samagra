@@ -1,4 +1,4 @@
-package com.samagra.driver.manager.web.factory;
+package com.samagra.driver.factory.web;
 
 import com.samagra.driver.manager.web.local.ChromeManager;
 import com.samagra.driver.manager.web.local.FirefoxManager;

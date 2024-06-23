@@ -6,7 +6,7 @@ import org.testng.annotations.BeforeTest;
 public class Base {
     @BeforeTest
     public void setup() {
-        Driver.initialiseDriver();
+        Driver.initialiseDriverForWeb();
     }
 
     @BeforeTest

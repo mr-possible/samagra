@@ -1,4 +1,4 @@
-package com.samagra.driver.manager.web.factory;
+package com.samagra.driver.factory.web;
 
 import com.samagra.driver.manager.web.remote.SeleniumGridChromeManager;
 import com.samagra.driver.manager.web.remote.SeleniumGridFirefoxManager;

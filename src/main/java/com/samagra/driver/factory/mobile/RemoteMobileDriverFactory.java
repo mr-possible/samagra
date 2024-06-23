@@ -1,4 +1,4 @@
-package com.samagra.driver.manager.mobile.factory;
+package com.samagra.driver.factory.mobile;
 
 import com.samagra.enums.MobileOSType;
 import com.samagra.enums.MobileRemotePlatform;

@@ -9,7 +9,6 @@ import lombok.Getter;
 @Builder
 @Getter
 public class WebDriverPreReq {
-    private RunMode runMode;
     private BrowserType browserType;
     private BrowserRemotePlatform browserRemotePlatform;
 }

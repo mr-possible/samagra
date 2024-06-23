@@ -1,4 +1,4 @@
-package com.samagra.driver.manager.mobile.factory;
+package com.samagra.driver.factory.mobile;
 
 import com.samagra.driver.manager.mobile.local.AndroidManager;
 import com.samagra.driver.manager.mobile.local.IosManager;
